@@ -9,12 +9,66 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:600,700&display=swap" rel="stylesheet">
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
 
-    <!-- Attribution -->
+    <div class="main-container">
+      <!-- Header Container -->
+      <div class="header-container">
+        <div class="title-box">
+          <p>Rock<br>Paper<br>Scissors</p>
+        </div>
+        <div class="score-box">
+          <p class="score-title">Score</p>
+          <p class="score-number">12</p>
+        </div>
+      </div>
+
+      <!-- Game Container -->
+      <div class="game-container">
+        <!-- Choose Sequence Container -->
+        <div class="choose-sequence-container">
+          <img src="images/bg-triangle.svg" alt="triangle image">
+          <!-- Paper Button -->
+          <div id="paper-button" class="btn">
+            <div class="circle">
+              <img class="icon" src="images/icon-paper.svg" alt="paper icon">
+            </div>
+          </div>
+
+          <!-- Scissors Button -->
+          <div id="scissors-button" class="btn">
+            <div class="circle">
+              <img class="icon" src="images/icon-scissors.svg" alt="scissors icon">
+            </div>
+          </div>
+
+          <!-- Rock Button -->
+          <div id="rock-button" class="btn">
+            <div class="circle">
+              <img class="icon" src="images/icon-rock.svg" alt="rock icon">
+            </div> <!-- rock circle -->
+          </div> <!-- rock button -->
+        </div> <!-- choose sequence container -->
+      </div> <!-- game container -->
+    </div> <!-- main container -->
+
+    <!-- Rules Container -->
+    <div class="rules-container">
+      <p>Rules</p>
+    </div>
+
+    <!-- Rules Popup -->
+    <div class="transparent-black-background">
+      
+    </div>
+
+    <!-- Attribution Section-->
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#" target="_blank">Brian Hyun</a>.
     </div>

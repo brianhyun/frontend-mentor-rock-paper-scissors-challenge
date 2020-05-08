@@ -1,10 +1,194 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  align-items: center;
+  background: radial-gradient(circle at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  display: flex;
+  flex-direction: column;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  height: 100%;
+  justify-content: center;
+  margin: 0;
+  position: relative; /* to set position of attribution */
+}
+
+p {
+  margin: 0;
+}
+
+/******************* Main Container *******************/
+
+.main-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 3% 0;
+  width: 50%;
+}
+
+/******************* Header Container *******************/
+
+.header-container {
+  align-items: center;
+  border: 2px solid hsl(217, 16%, 45%);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18%;
+  padding: 3%;
+  width: 100%;
+}
+
+.header-container .title-box p {
+  color: #fff;
+  line-height: 0.8;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+/* Score Box */
+
+.score-box {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+  padding: 1% 5%;
+  text-align: center;
+}
+
+.score-title {
+  color: hsl(229, 64%, 46%);
+  letter-spacing: 3px;
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+
+.score-number {
+  color: hsl(229, 25%, 31%);
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 0.8;
+}
+
+/******************* Game Container *******************/
+
+.game-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Choose Sequence Container */
+
+.choose-sequence-container {
+  position: relative;
+}
+
+.btn {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  height: 210px;
+  justify-content: center;
+  width: 210px;
+  -moz-box-shadow:    0 3px 20px #000;
+  -webkit-box-shadow: 0 3px 20px #000;
+  box-shadow:         0 3px 20px #000;
+}
+
+.icon {
+  width: 75px;
+}
+
+#paper-button {
+  background-image: linear-gradient(to bottom,hsl(230, 89%, 65%), hsl(230, 89%, 62%));
+  position: absolute;
+    top: -105px;
+    left: -105px;
+  -moz-box-shadow:    inset 0 -8px 0 #3A51D9;
+  -webkit-box-shadow: inset 0 -8px 0 #3A51D9;
+  box-shadow:         inset 0 -8px 0 #3A51D9;
+}
+
+#scissors-button {
+  background-image: linear-gradient(to bottom, hsl(40, 84%, 53%), hsl(39, 89%, 49%));
+  position: absolute;
+    top: -105px;
+    right: -105px;
+  -moz-box-shadow:    inset 0 -8px 0 #C87E0B;
+  -webkit-box-shadow: inset 0 -8px 0 #C87E0B;
+  box-shadow:         inset 0 -8px 0 #C87E0B;
+}
+
+#rock-button {
+  background-image: linear-gradient(to bottom, hsl(349, 70%, 56%), hsl(349, 71%, 52%));
+  position: absolute;
+    bottom: -105px;
+    right: calc(50% - 105px);
+  -moz-box-shadow:    inset 0 -8px 0 #BF253E;
+  -webkit-box-shadow: inset 0 -8px 0 #BF253E;
+  box-shadow:         inset 0 -8px 0 #BF253E;
+}
+
+.circle {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50%;
+  -moz-box-shadow:    inset 0 7px 0 #E6E6E6;
+  -webkit-box-shadow: inset 0 7px 0 #E6E6E6;
+  box-shadow:         inset 0 7px 0 #E6E6E6;
+  display: flex;
+  height: 160px;
+  justify-content: center;
+  width: 160px;
+}
+
 /******************* Attribution Section *******************/
 
 .attribution {
+  color: #fff;
+  font-family: sans-serif;
   font-size: 11px;
+  padding: 2.5%;
+  position: absolute;
+    bottom: 0;
   text-align: center;
 }
 
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: #fff;
+}
+
+/******************* Rules Container *******************/
+
+.rules-container {
+  border: 1px solid #fff;
+  border-radius: 10px;
+  color: #fff;
+  padding: 0.5% 2.5%;
+  position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
+
+.rules-container:hover {
+  cursor: pointer;
+}
+
+.rules-container p {
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
