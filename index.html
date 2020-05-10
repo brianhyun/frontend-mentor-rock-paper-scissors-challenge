@@ -1,118 +1,129 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:600,700&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:600,700&display=swap" rel="stylesheet">
 
-    <div class="main-container">
-      <!-- Header Container -->
-      <div class="header-container">
-        <div class="title-box">
-          <p>Rock<br>Paper<br>Scissors</p>
-        </div>
-        <div class="score-box">
-          <p class="score-title">Score</p>
-          <p class="score-number">12</p>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- Header Container -->
+  <div class="header-container">
+    <div class="title-box">
+      <p>Rock<br>Paper<br>Scissors</p>
+    </div>
+    <div class="score-box">
+      <p class="score-title">Score</p>
+      <p class="score-number">12</p>
+    </div>
+  </div>
+
+  <!-- Game Container -->
+  <div class="game-container">
+    <!-- Choose Sequence Container -->
+    <div class="choose-sequence-container">
+      <!-- Translucent Triangle -->
+      <img src="images/bg-triangle.svg" alt="triangle image">
+
+      <!-- Paper Button -->
+      <div id="paper-button" class="btn">
+        <div class="circle">
+          <img class="icon" src="images/icon-paper.svg" alt="paper icon">
         </div>
       </div>
 
-      <!-- Game Container -->
-      <div class="game-container">
-        <!-- Choose Sequence Container -->
-        <div class="choose-sequence-container">
-          <img src="images/bg-triangle.svg" alt="triangle image">
-          <!-- Paper Button -->
-          <div id="paper-button" class="btn">
-            <div class="circle">
-              <img class="icon" src="images/icon-paper.svg" alt="paper icon">
-            </div>
-          </div>
-
-          <!-- Scissors Button -->
-          <div id="scissors-button" class="btn">
-            <div class="circle">
-              <img class="icon" src="images/icon-scissors.svg" alt="scissors icon">
-            </div>
-          </div>
-
-          <!-- Rock Button -->
-          <div id="rock-button" class="btn">
-            <div class="circle">
-              <img class="icon" src="images/icon-rock.svg" alt="rock icon">
-            </div> <!-- circle -->
-          </div> <!-- rock button -->
-        </div> <!-- choose sequence container -->
-
-        <!-- Result Container -->
-        <div class="result-container">
-          <!-- Result Container Left  -->
-          <div class="user-container">
-            <p>You Picked</p>
-            <!-- append user's choice: example div below
-            <div id="rock-button-result" class="btn-result">
-              <div class="circle-result">
-                <img class="icon-result" src="images/icon-rock.svg" alt="rock icon">
-              </div>
-            </div> -->
-            <!-- <div class="gray-circle"></div> -->
-          </div>
-
-          <!-- Result Container Right -->
-          <div class="computer-container">
-            <p>The House Picked</p>
-            <!-- append computer's choice: example div below
-            <div id="paper-button-result" class="btn-result">
-              <div class="circle-result">
-                <img class="icon-result" src="images/icon-paper.svg" alt="paper icon">
-              </div>
-            </div> -->
-            <!-- <div class="gray-circle"></div> -->
-          </div>
-        </div>
-      </div> <!-- game container -->
-    </div> <!-- main container -->
-
-    <!-- Rules Container -->
-    <div class="rules-button">
-      <p>Rules</p>
-    </div>
-
-    <!-- Rules Popup -->
-    <div class="rules-popup-container">
-      <div class="black-background">
-        <!-- empty -->
-      </div>
-      <div class="rules-card">
-        <div class="rules-header">
-          <p>Rules</p>
-          <img class="rules-close" src="images/icon-close.svg" alt="close x icon">
-        </div>
-        <div class="rules-image">
-          <img src="images/image-rules.svg" alt="image rules">
+      <!-- Scissors Button -->
+      <div id="scissors-button" class="btn">
+        <div class="circle">
+          <img class="icon" src="images/icon-scissors.svg" alt="scissors icon">
         </div>
       </div>
-    </div>
 
-    <!-- Attribution Section-->
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#" target="_blank">Brian Hyun</a>.
-    </div>
+      <!-- Rock Button -->
+      <div id="rock-button" class="btn">
+        <div class="circle">
+          <img class="icon" src="images/icon-rock.svg" alt="rock icon">
+        </div> <!-- circle -->
+      </div> <!-- rock button -->
+    </div> <!-- choose sequence container -->
 
-    <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="scripts/index.js" charset="utf-8"></script>
-  </body>
+    <!-- Result Container -->
+    <div class="result-container">
+      <!-- User Container  -->
+      <div class="user-container">
+        <p>You Picked</p>
+        <!-- append user's choice: example div below -->
+        <!-- <div id="rock-button-result" class="btn-result">
+          <div class="circle-result">
+            <img class="icon-result" src="images/icon-rock.svg" alt="rock icon">
+          </div>
+        </div> -->
+        <!-- <div class="gray-circle"></div> -->
+      </div>
+
+      <!-- Result Message Container -->
+      <!-- <div class="result-message-container">
+        <p class="result-message">You Lose</p>
+        <div class="play-again-button">
+          <p>Play Again</p>
+        </div>
+      </div> -->
+
+      <!-- Result Container Right -->
+      <div class="computer-container">
+        <p>The House Picked</p>
+        <!-- append computer's choice: example div below -->
+        <!-- <div id="paper-button-result" class="btn-result">
+          <div class="circle-result">
+            <img class="icon-result" src="images/icon-paper.svg" alt="paper icon">
+          </div>
+        </div> -->
+        <!-- <div class="gray-circle"></div> -->
+      </div> <!-- computer container -->
+    </div> <!-- result container -->
+  </div> <!-- game container -->
+
+  <!-- Rules Container -->
+  <div class="rules-button">
+    <p>Rules</p>
+  </div>
+
+  <!-- Rules Popup -->
+  <div class="rules-popup-container">
+    <div class="black-background">
+      <!-- empty -->
+    </div>
+    <div class="rules-card">
+      <div class="rules-header">
+        <p>Rules</p>
+        <img class="rules-close" src="images/icon-close.svg" alt="close x icon">
+      </div>
+      <div class="rules-image">
+        <img src="images/image-rules.svg" alt="image rules">
+      </div>
+    </div>
+  </div>
+
+  <!-- Attribution Section-->
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#" target="_blank">Brian Hyun</a>.
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="scripts/index.js" charset="utf-8"></script>
+</body>
+
 </html>

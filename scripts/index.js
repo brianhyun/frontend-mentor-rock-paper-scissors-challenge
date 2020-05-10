@@ -55,6 +55,9 @@ $("#rock-button, #paper-button, #scissors-button").click(function(event) {
   // create computer-chosen button div insider computer container
   createChosenButton("computer", computersChoice);
 
+  // add result message container after user container
+  $(".user-container").after("<p>hello</p>");
+
   // game logic
   var win = whoWon(usersChoice, computersChoice);
   console.log("Results: " + win);
