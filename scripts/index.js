@@ -71,6 +71,10 @@ function showChosenButtons(wonOrLostMessage, usersChoice, computersChoice) {
   } else if (wonOrLostMessage == "You Lose"){ // computer wins
     createChosenButton("user", usersChoice);
     createChosenButton("computer", computersChoice, true);
+    // decrease user win count
+    userWinCount--;
+    // change the score displayed
+    $(".score-number").text("" + userWinCount + "");
   } else { // draw
     createChosenButton("user", usersChoice);
     createChosenButton("computer", computersChoice);

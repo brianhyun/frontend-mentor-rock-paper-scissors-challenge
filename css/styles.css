@@ -184,7 +184,7 @@ p {
   width: 100%;
 }
 
-/* In the design files, there is a gray circle that, to my assumption, exists behind the user- and computer-chosen buttons. I'm not sure if the intent is for the buttons to sit on top of the gray circles. I don't understand why the gray circles would be required. The computation would happen too quickly for users to notice the gray circles. If you want to show the gray circle, then you have to put a setTimeout function before the computer-chosen button appears. But, this would give the impression that the computer is calculating it's choice. */
+/* In the design files, there is a gray circle that, to my assumption, exists behind the user- and computer-chosen buttons. I'm not sure if the intent is for the buttons to sit on top of the gray circles. I don't understand why the gray circles would be required. The computation would happen too quickly for users to notice the gray circles. If you want to show the gray circle, then you have to put a setTimeout function before the computer-chosen button appears. But, this would give the impression that the computer is calculating it's choice. And, the game doesn't work that way. Both players have to present their choice at the exact same time. */
 
 /* .gray-circle {
   background-color: #000;
@@ -267,9 +267,9 @@ p {
   height: 300px;
   justify-content: center;
   width: 300px;
-  -moz-box-shadow:    0 3px 20px #000;
-  -webkit-box-shadow: 0 3px 20px #000;
-  box-shadow:         0 3px 20px #000;
+  -moz-box-shadow:    0 3px 10px #000;
+  -webkit-box-shadow: 0 3px 10px #000;
+  box-shadow:         0 3px 10px #000;
   z-index: 4;
 }
 
@@ -408,7 +408,7 @@ p {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10%;
+  margin-bottom: 12%;
   width: 100%;
 }
 
