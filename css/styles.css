@@ -15,6 +15,7 @@ body {
   font-family: 'Barlow Semi Condensed', sans-serif;
   height: 100%;
   margin: 0;
+  overflow: hidden; /* overflow hidden doesn't allow you to scroll -- locks the webpage as a single webpage! */
   padding: 3%;
   position: relative; /* to set position of attribution and rules popup container*/
 }
@@ -225,6 +226,40 @@ p {
   box-shadow:         inset 0 -8px 0 #C87E0B;
 }
 
+/* Winner Ripple Circle Styling */
+
+.circle-styling-box {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative; /* to set position absolute for winner circle ripple styling */
+}
+
+.winner-circle-styling {
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0.05;
+  position: absolute;
+}
+
+.winner-circle-styling.large-circle {
+  height: 850px;
+  width: 850px;
+  z-index: 1;
+}
+
+.winner-circle-styling.medium-circle {
+  height: 650px;
+  width: 650px;
+  z-index: 2;
+}
+
+.winner-circle-styling.small-circle {
+  height: 450px;
+  width: 450px;
+  z-index: 3;
+}
+
 .btn-result {
   align-items: center;
   border-radius: 50%;
@@ -235,6 +270,7 @@ p {
   -moz-box-shadow:    0 3px 20px #000;
   -webkit-box-shadow: 0 3px 20px #000;
   box-shadow:         0 3px 20px #000;
+  z-index: 4;
 }
 
 .circle-result {
@@ -279,6 +315,7 @@ p {
   justify-content: center;
   padding: 8%;
   width: 100%;
+  z-index: 500; /* winner circle ripple styling overlaps play button and prevents clicking -- need index higher than larger circle */
 }
 
 .play-again-button:hover {
@@ -388,7 +425,7 @@ p {
   cursor: pointer;
 }
 
-/* Scratch Section */
+/* Scratch Section: comment out this section to return to original game sequence */
 
 /* .choose-sequence-container {
   display: none;
