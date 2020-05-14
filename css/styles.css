@@ -84,7 +84,7 @@ p {
 /* Choose Sequence Container */
 
 .choose-sequence-container {
-  margin-top: 13%;
+  margin-top: 10%;
   position: relative;
 }
 
@@ -277,14 +277,18 @@ p {
   border-radius: 10px;
   display: flex;
   justify-content: center;
+  padding: 8%;
   width: 100%;
+}
+
+.play-again-button:hover {
+  cursor: pointer;
 }
 
 .play-again-button p {
   color: hsl(349, 71%, 52%);
   letter-spacing: 3px;
   margin: 0;
-  padding: 7%;
 }
 
 /******************* Attribution Section *******************/
@@ -293,7 +297,7 @@ p {
   color: #fff;
   font-family: sans-serif;
   font-size: 11px;
-  padding: 2.5%;
+  padding: 2%;
   position: absolute;
     bottom: 0;
   text-align: center;

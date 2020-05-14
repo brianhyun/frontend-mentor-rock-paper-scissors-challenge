@@ -29,19 +29,38 @@ function createChosenButton (userOrComp, option) {
 function whoWon (uc, cc) {
   // uc = usersChoice, cc = computersChoice
   if (uc == cc) { // draw
-    return "draw";
+    return "Draw";
   } else if ((uc == "rock" && cc == "paper") || (uc == "paper" && cc == "scissors") || (uc == "scissors" && cc == "rock")) { // user loses
-    return "user lost";
+    return "You Lose";
   } else { // user wins
-    return "user won";
+    return "You Win";
   }
 }
 
+function playAgain() {
+  $(".play-again-button").click(function() {
+    // remove result message container
+    $(".result-message-container").remove();
+    // remove circle-result-divs from user & comp containers so new ones can be created in the next round
+    $(".result-container .btn-result").remove();
+    // hide result container
+    $(".result-container").css("display", "none");
+    // show choose sequence container
+    $(".choose-sequence-container").css("display", "flex");
+  });
+}
+
+function showResultMessage(wonOrLostMessage) {
+  $(".user-container").after("<div class='result-message-container'> <p class='result-message'>" + wonOrLostMessage + "</p> <div class='play-again-button'> <p>Play Again</p> </div> </div>");
+}
+
 var options = ["rock", "paper", "scissors"];
-var randomIndex = Math.floor(Math.random() * 3);
-var computersChoice = options[randomIndex];
 
 $("#rock-button, #paper-button, #scissors-button").click(function(event) {
+  // generate random number to index options array -- this will be computer's choice
+  var randomIndex = Math.floor(Math.random() * 3);
+  var computersChoice = options[randomIndex];
+
   // hide choose sequence container
   $(".choose-sequence-container").css("display", "none");
   // display results container
@@ -50,19 +69,17 @@ $("#rock-button, #paper-button, #scissors-button").click(function(event) {
   // needed to create new div and image file path
   var usersChoice = convertButtonIdToChoice(event.currentTarget.id);
 
-  // create user-chosen button div inside user container
+  // append user circle-div in user container
   createChosenButton("user", usersChoice);
-  // create computer-chosen button div insider computer container
+  // append computer circle-div in computer container
   createChosenButton("computer", computersChoice);
 
-  // add result message container after user container
-  $(".user-container").after("<p>hello</p>");
-
   // game logic
-  var win = whoWon(usersChoice, computersChoice);
-  console.log("Results: " + win);
+  var wonOrLostMessage = whoWon(usersChoice, computersChoice);
 
-  // Console Logs
-  console.log("Your choice: " + event.currentTarget.id);
-  console.log("Computer's choice: " + options[randomIndex]);
+  // add result message container after user container
+  showResultMessage(wonOrLostMessage);
+
+  // play again sequence
+  playAgain();
 });
