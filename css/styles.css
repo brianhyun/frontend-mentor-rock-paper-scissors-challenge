@@ -415,7 +415,15 @@ p {
   cursor: pointer;
 }
 
+/***********************************************************************/
+/***********************************************************************/
+/***********************************************************************/
+/***********************************************************************/
 /******************* Media Query Section (MQ Section)*******************/
+/***********************************************************************/
+/***********************************************************************/
+/***********************************************************************/
+/***********************************************************************/
 
 @media (max-width: 1440px) {
 
@@ -498,6 +506,62 @@ p {
   .circle {
     height: 140px;
     width: 140px;
+  }
+
+  /* Result Container */
+
+  .user-container, .computer-container{
+    font-size: 1.3em;
+  }
+
+  /* Winner Ripple Circle Styling */
+
+  .winner-circle-styling.large-circle {
+    height: 720px;
+    width: 720px;
+  }
+
+  .winner-circle-styling.medium-circle {
+    height: 570px;
+    width: 570px;
+  }
+
+  .winner-circle-styling.small-circle {
+    height: 420px;
+    width: 420px;
+  }
+
+  .btn-result {
+    height: 280px;
+    width: 280px;
+  }
+
+  .circle-result {
+    height: 220px;
+    width: 220px;
+  }
+
+  .icon-result {
+    width: 95px;
+  }
+
+  /* Result Message */
+
+  .result-message-container {
+    width: 30rem;
+  }
+
+  .result-message {
+    font-size: 2.85rem;
+  }
+
+  .play-again-button {
+    padding: 7%;
+  }
+
+  .play-again-button p {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
   }
 
 }
