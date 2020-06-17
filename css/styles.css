@@ -417,15 +417,115 @@ p {
 
 /***********************************************************************/
 /***********************************************************************/
-/***********************************************************************/
-/***********************************************************************/
-/******************* Media Query Section (MQ Section)*******************/
-/***********************************************************************/
-/***********************************************************************/
+/******************* Media Query (MQ Mobile Section)********************/
 /***********************************************************************/
 /***********************************************************************/
 
-@media (max-width: 1440px) {
+@media (max-width: 375px) {
+
+  body {
+    padding: 7%;
+  }
+
+  /* Header Container */
+
+  .header-container {
+    border-width: 3px;
+    padding: 5%;
+    width: 100%;
+  }
+
+  .header-container .title-box p {
+    font-size: 1.3rem;
+  }
+
+  /* Score Box */
+
+  .score-box {
+    padding: 4% 10%;
+  }
+
+  .score-title {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+  }
+
+  .score-number {
+    font-size: 2.5rem;
+  }
+
+  /* Choose Sequence Container */
+
+  .choose-sequence-container {
+    margin-top: 65%;
+  }
+
+  .triangle {
+    width: 180px;
+  }
+
+  .btn {
+    height: 140px;
+    width: 140px;
+  }
+
+  .icon {
+    width: 50px;
+  }
+
+  .circle {
+    height: 110px;
+    width: 110px;
+  }
+
+  #paper-button {
+    position: absolute;
+      top: -70px;
+      left: -70px;
+  }
+
+  #scissors-button {
+    position: absolute;
+      top: -70px;
+      right: -70px;
+  }
+
+  #rock-button {
+    position: absolute;
+      bottom: -70px;
+      right: calc(50% - 70px);
+  }
+
+  /* Rules Button */
+
+  .rules-button {
+    padding: 3% 12%;
+    position: absolute;
+      right: calc(50% - 79.64px);
+      bottom: 30px;
+  }
+
+  .rules-button p {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  /* Attribution Section */
+
+  .attribution {
+    display: none;
+  }
+
+}
+
+/***********************************************************************/
+/***********************************************************************/
+/******************* Media Query (MQ Desktop Section)*******************/
+/***********************************************************************/
+/***********************************************************************/
+
+@media (max-width: 1440px) and (min-width: 376px){
 
   /* MQ: Header Container */
 
@@ -445,8 +545,8 @@ p {
   }
 
   .score-title {
-    letter-spacing: 2px;
     font-size: 0.8rem;
+    letter-spacing: 2px;
   }
 
   .score-number {
