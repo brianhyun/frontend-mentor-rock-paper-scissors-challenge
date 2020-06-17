@@ -184,16 +184,6 @@ p {
   width: 100%;
 }
 
-/* In the design files, there is a gray circle that, to my assumption, exists behind the user- and computer-chosen buttons. I'm not sure if the intent is for the buttons to sit on top of the gray circles. I don't understand why the gray circles would be required. The computation would happen too quickly for users to notice the gray circles. If you want to show the gray circle, then you have to put a setTimeout function before the computer-chosen button appears. But, this would give the impression that the computer is calculating it's choice. And, the game doesn't work that way. Both players have to present their choice at the exact same time. */
-
-/* .gray-circle {
-  background-color: #000;
-  border-radius: 50%;
-  height: 10rem;
-  opacity: 0.2;
-  width: 10rem;
-} */
-
 /* Result Styles */
 
 #rock-button-result {
@@ -425,6 +415,93 @@ p {
   cursor: pointer;
 }
 
+/******************* Media Query Section (MQ Section)*******************/
+
+@media (max-width: 1440px) {
+
+  /* MQ: Header Container */
+
+  .header-container {
+    margin-bottom: 5%;
+    padding: 1.5%;
+  }
+
+  .header-container .title-box p {
+    font-size: 2rem;
+  }
+
+  /* MQ: Score Box */
+
+  .score-box {
+    padding: 3% 6%;
+  }
+
+  .score-title {
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+  }
+
+  .score-number {
+    font-size: 2.5rem;
+  }
+
+  /* MQ: Rules Popup Container */
+
+  .rules-card {
+    padding: 2.5%;
+    position: absolute;
+      left: 510px;
+      top: 150px;
+  }
+
+  .rules-header {
+    margin-bottom: 13%;
+  }
+
+  /* MQ: Choose Sequence Container */
+
+  .choose-sequence-container {
+    margin-top: 10%;
+  }
+
+  .triangle {
+    width: 270px;
+  }
+
+  .btn {
+    height: 190px;
+    width: 190px;
+  }
+
+  .icon {
+    width: 65px;
+  }
+
+  #paper-button {
+    position: absolute;
+      top: -95px;
+      left: -95px;
+  }
+
+  #scissors-button {
+    position: absolute;
+      top: -95px;
+      right: -95px;
+  }
+
+  #rock-button {
+    position: absolute;
+      bottom: -95px;
+      right: calc(50% - 95px);
+  }
+
+  .circle {
+    height: 140px;
+    width: 140px;
+  }
+
+}
+
 /* Scratch Section: comment out this section to return to original game sequence */
 
 /* .choose-sequence-container {
@@ -434,3 +511,5 @@ p {
 .result-container {
   display: flex;
 } */
+
+/* After four weeks of respite, I'm back in business, girls and boys! Brian, I'm genuinely glad you came back for me. I was your work-in-progress and I thought you'd leave me. I'm glad you came back, again. Just take your time, my friend! */
