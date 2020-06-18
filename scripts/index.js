@@ -29,6 +29,14 @@ function convertButtonIdToChoice(eventTargetId) {
   return usersChoice; // expected return values: "paper", "rock", or "scissors"
 }
 
+// remove paragraph items from the top
+$(".user-container").shift();
+$(".computer-container").shift();
+
+// add paragraph items after the chosen buttons
+$(".user-container").after("<p>You Picked</p>");
+$(".computer-container").after("<p>The House Picked</p>");
+
 // Results Sequence Script
 function createChosenButton (userOrComp, option, winCssStyling = false) {
   // This function will append a div to the .user-container or .computer-container, whether it's for the user or computer depends on the argument passed into the function, that shows what choice that was selected ("rock", "paper", or "scissors").
@@ -88,8 +96,16 @@ function showChosenButtons(wonOrLostMessage, usersChoice, computersChoice) {
   }
 }
 
+var x = window.matchMedia("(max-width: 375px)");
+
 function showResultMessage(wonOrLostMessage) {
-  $(".user-container").after("<div class='result-message-container'> <p class='result-message'>" + wonOrLostMessage + "</p> <div class='play-again-button'> <p>Play Again</p> </div> </div>");
+  // if screen size is 375px or less, then (1) attach the results message and play again button after the game container (2) and remove paragraph items (you picked and the house picked) from the top and move them to the bottom
+  if (x.matches) {
+    $(".game-container").after("<div class='result-message-container'> <p class='result-message'>" + wonOrLostMessage + "</p> <div class='play-again-button'> <p>Play Again</p> </div> </div>");
+  } else {
+    $(".user-container").after("<div class='result-message-container'> <p class='result-message'>" + wonOrLostMessage + "</p> <div class='play-again-button'> <p>Play Again</p> </div> </div>");
+  }
+
 }
 
 // Start Game Sequence

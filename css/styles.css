@@ -458,7 +458,7 @@ p {
   /* Choose Sequence Container */
 
   .choose-sequence-container {
-    margin-top: 65%;
+    margin-top: 37%;
   }
 
   .triangle {
@@ -549,6 +549,79 @@ p {
   .rules-card::after {
     margin-top: 40%;
     content: url("../images/icon-close.svg");
+  }
+
+  /* Game Container */
+
+  .game-container {
+    min-width: 100%;
+  }
+
+  /* Result Container */
+
+  .result-container {
+    margin-top: 10%;
+    width: 100%;
+  }
+
+  .result-container p {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+  }
+
+  .btn-result {
+    height: 135px;
+    width: 135px;
+  }
+
+  .circle-result {
+    height: 100px;
+    width: 100px;
+  }
+
+  .icon-result {
+    width: 45px;
+  }
+
+  /* Winner Styling */
+  .winner-circle-styling.large-circle {
+    height: 280px;
+    width: 280px;
+    z-index: 1;
+  }
+
+  .winner-circle-styling.medium-circle {
+    height: 230px;
+    width: 230px;
+    z-index: 2;
+  }
+
+  .winner-circle-styling.small-circle {
+    height: 180px;
+    width: 180px;
+    z-index: 3;
+  }
+
+  /* Result Message */
+
+  .result-message-container {
+    margin-top: 10%;
+    width: 14.5rem;
+  }
+
+  .result-message {
+    font-size: 2.7rem;
+    padding-bottom: 5%;
+  }
+
+  .play-again-button {
+    padding: 5%;
+    width: 80%;
+  }
+
+  .play-again-button p {
+    color: hsl(237, 49%, 15%);
   }
 
   /* Attribution Section */
