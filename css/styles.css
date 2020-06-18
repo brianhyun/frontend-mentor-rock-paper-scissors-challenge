@@ -511,6 +511,46 @@ p {
     text-transform: uppercase;
   }
 
+  /* Rules Popup Container */
+
+  .black-background {
+    display: none;
+  }
+
+  .rules-card {
+    height: 100%;
+    padding: 5%;
+    position: absolute;
+      left: 0;
+      top: 0;
+    width: 100%;
+  }
+
+  .rules-header {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20%;
+    width: 100%;
+  }
+
+  .rules-close {
+    display: none;
+  }
+
+  .rules-image {
+    width: 90%;
+  }
+
+  .rules-image img {
+    width: 100%;
+  }
+
+  .rules-card::after {
+    margin-top: 40%;
+    content: url("../images/icon-close.svg");
+  }
+
   /* Attribution Section */
 
   .attribution {

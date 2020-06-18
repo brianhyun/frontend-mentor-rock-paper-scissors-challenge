@@ -1,132 +1,132 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:600,700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:600,700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/styles.css">
-</head>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
 
-<body>
+  <body>
 
-  <!-- Header Container -->
-  <div class="header-container">
-    <div class="title-box">
-      <p>Rock<br>Paper<br>Scissors</p>
-    </div>
-    <div class="score-box">
-      <p class="score-title">Score</p>
-      <p class="score-number">0</p>
-    </div>
-  </div>
-
-  <!-- Game Container -->
-  <div class="game-container">
-    <!-- Choose Sequence Container -->
-    <div class="choose-sequence-container">
-      <!-- Translucent Triangle -->
-      <img class="triangle" src="images/bg-triangle.svg" alt="triangle image">
-
-      <!-- Paper Button -->
-      <div id="paper-button" class="btn">
-        <div class="circle">
-          <img class="icon" src="images/icon-paper.svg" alt="paper icon">
-        </div>
+    <!-- Header Container -->
+    <div class="header-container">
+      <div class="title-box">
+        <p>Rock<br>Paper<br>Scissors</p>
       </div>
-
-      <!-- Scissors Button -->
-      <div id="scissors-button" class="btn">
-        <div class="circle">
-          <img class="icon" src="images/icon-scissors.svg" alt="scissors icon">
-        </div>
+      <div class="score-box">
+        <p class="score-title">Score</p>
+        <p class="score-number">0</p>
       </div>
+    </div>
 
-      <!-- Rock Button -->
-      <div id="rock-button" class="btn">
-        <div class="circle">
-          <img class="icon" src="images/icon-rock.svg" alt="rock icon">
-        </div> <!-- circle -->
-      </div> <!-- rock button -->
-    </div> <!-- choose sequence container -->
+    <!-- Game Container -->
+    <div class="game-container">
+      <!-- Choose Sequence Container -->
+      <div class="choose-sequence-container">
+        <!-- Translucent Triangle -->
+        <img class="triangle" src="images/bg-triangle.svg" alt="triangle image">
 
-    <!-- Result Container -->
-    <div class="result-container">
-      <!-- User Container  -->
-      <div class="user-container">
-        <p>You Picked</p>
-        <!-- append user's choice: example div below with winner ripple circle styling; comment out to return to normal game sequence -->
-        <!-- <div class="circle-styling-box">
-          <div id="rock-button-result" class="btn-result">
-            <div class="circle-result">
-              <img class="icon-result" src="images/icon-rock.svg" alt="rock icon">
+        <!-- Paper Button -->
+        <div id="paper-button" class="btn">
+          <div class="circle">
+            <img class="icon" src="images/icon-paper.svg" alt="paper icon">
+          </div>
+        </div>
+
+        <!-- Scissors Button -->
+        <div id="scissors-button" class="btn">
+          <div class="circle">
+            <img class="icon" src="images/icon-scissors.svg" alt="scissors icon">
+          </div>
+        </div>
+
+        <!-- Rock Button -->
+        <div id="rock-button" class="btn">
+          <div class="circle">
+            <img class="icon" src="images/icon-rock.svg" alt="rock icon">
+          </div> <!-- circle -->
+        </div> <!-- rock button -->
+      </div> <!-- choose sequence container -->
+
+      <!-- Result Container -->
+      <div class="result-container">
+        <!-- User Container  -->
+        <div class="user-container">
+          <p>You Picked</p>
+          <!-- append user's choice: example div below with winner ripple circle styling; comment out to return to normal game sequence -->
+          <!-- <div class="circle-styling-box">
+            <div id="rock-button-result" class="btn-result">
+              <div class="circle-result">
+                <img class="icon-result" src="images/icon-rock.svg" alt="rock icon">
+              </div>
             </div>
-          </div>
-          <div class="winner-circle-styling small-circle"></div>
-          <div class="winner-circle-styling medium-circle"></div>
-          <div class="winner-circle-styling large-circle"></div>
-        </div> -->
-      </div>
-
-      <!-- Result Message Container -->
-      <!-- <div class="result-message-container">
-        <p class="result-message">You Lose</p>
-        <div class="play-again-button">
-          <p>Play Again</p>
+            <div class="winner-circle-styling small-circle"></div>
+            <div class="winner-circle-styling medium-circle"></div>
+            <div class="winner-circle-styling large-circle"></div>
+          </div> -->
         </div>
-      </div> -->
 
-      <!-- Result Container Right -->
-      <div class="computer-container">
-        <p>The House Picked</p>
-        <!-- append computer's choice: example div below; comment out to return to normal game sequence -->
-        <!-- <div id="paper-button-result" class="btn-result">
-          <div class="circle-result">
-            <img class="icon-result" src="images/icon-paper.svg" alt="paper icon">
+        <!-- Result Message Container -->
+        <!-- <div class="result-message-container">
+          <p class="result-message">You Lose</p>
+          <div class="play-again-button">
+            <p>Play Again</p>
           </div>
         </div> -->
-      </div> <!-- computer container -->
-    </div> <!-- result container -->
-  </div> <!-- game container -->
 
-  <!-- Rules Container -->
-  <div class="rules-button">
-    <p>Rules</p>
-  </div>
+        <!-- Result Container Right -->
+        <div class="computer-container">
+          <p>The House Picked</p>
+          <!-- append computer's choice: example div below; comment out to return to normal game sequence -->
+          <!-- <div id="paper-button-result" class="btn-result">
+            <div class="circle-result">
+              <img class="icon-result" src="images/icon-paper.svg" alt="paper icon">
+            </div>
+          </div> -->
+        </div> <!-- computer container -->
+      </div> <!-- result container -->
+    </div> <!-- game container -->
 
-  <!-- Rules Popup -->
-  <div class="rules-popup-container">
-    <div class="black-background">
-      <!-- empty -->
+    <!-- Rules Container -->
+    <div class="rules-button">
+      <p>Rules</p>
     </div>
-    <div class="rules-card">
-      <div class="rules-header">
-        <p>Rules</p>
-        <img class="rules-close" src="images/icon-close.svg" alt="close x icon">
+
+    <!-- Rules Popup -->
+    <div class="rules-popup-container">
+      <div class="black-background">
+        <!-- empty -->
       </div>
-      <div class="rules-image">
-        <img src="images/image-rules.svg" alt="image rules">
+      <div class="rules-card">
+        <div class="rules-header">
+          <p>Rules</p>
+          <img class="rules-close" src="images/icon-close.svg" alt="close x icon">
+        </div>
+        <div class="rules-image">
+          <img src="images/image-rules.svg" alt="image rules">
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Attribution Section-->
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#" target="_blank">Brian Hyun</a>.
-  </div>
+    <!-- Attribution Section-->
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#" target="_blank">Brian Hyun</a>.
+    </div>
 
-  <!-- Scripts -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="scripts/index.js" charset="utf-8"></script>
-</body>
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="scripts/index.js" charset="utf-8"></script>
+  </body>
 
 </html>

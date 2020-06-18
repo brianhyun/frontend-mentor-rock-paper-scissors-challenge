@@ -1,9 +1,16 @@
 // Rules Scripts
+// To show rules modal--for desktop and mobile version
 $(".rules-button").click(function() {
   $(".rules-popup-container").css("visibility", "visible");
 });
 
+// To hid rules modal--for desktop version
 $(".rules-close").click(function() {
+  $(".rules-popup-container").css("visibility", "hidden");
+});
+
+// To hide rules modal--for mobile version
+$(".rules-card:last-child").click(function() {
   $(".rules-popup-container").css("visibility", "hidden");
 });
 
