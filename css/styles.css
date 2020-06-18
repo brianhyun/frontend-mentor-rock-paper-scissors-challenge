@@ -436,7 +436,7 @@ p {
   }
 
   .header-container .title-box p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   /* Score Box */
@@ -446,13 +446,13 @@ p {
   }
 
   .score-title {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     letter-spacing: 2px;
     padding-bottom: 10px;
   }
 
   .score-number {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   /* Choose Sequence Container */
@@ -502,11 +502,12 @@ p {
   .rules-button {
     padding: 3% 12%;
     position: absolute;
-      right: calc(50% - 79.64px);
+      right: calc(50% - 74.40px);
       bottom: 30px;
   }
 
   .rules-button p {
+    font-size: 0.8rem;
     letter-spacing: 3px;
     text-transform: uppercase;
   }
@@ -539,6 +540,7 @@ p {
   }
 
   .rules-image {
+    padding-top: 15%;
     width: 90%;
   }
 
@@ -568,6 +570,10 @@ p {
     font-size: 0.7rem;
     letter-spacing: 2px;
     margin-bottom: 0;
+  }
+
+  .container-title {
+    margin-top: 15%;
   }
 
   .btn-result {
@@ -606,22 +612,23 @@ p {
   /* Result Message */
 
   .result-message-container {
-    margin-top: 10%;
-    width: 14.5rem;
+    margin-top: 14%;
+    width: 11rem;
   }
 
   .result-message {
-    font-size: 2.7rem;
-    padding-bottom: 5%;
+    font-size: 2.6rem;
+    padding-bottom: 7%;
   }
 
   .play-again-button {
-    padding: 5%;
-    width: 80%;
+    padding: 6% 7%;
+    width: 100%;
   }
 
   .play-again-button p {
     color: hsl(237, 49%, 15%);
+    font-size: 0.8rem;
   }
 
   /* Attribution Section */

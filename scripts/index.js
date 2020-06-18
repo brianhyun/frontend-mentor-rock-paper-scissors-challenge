@@ -29,13 +29,7 @@ function convertButtonIdToChoice(eventTargetId) {
   return usersChoice; // expected return values: "paper", "rock", or "scissors"
 }
 
-// remove paragraph items from the top
-$(".user-container").shift();
-$(".computer-container").shift();
-
-// add paragraph items after the chosen buttons
-$(".user-container").after("<p>You Picked</p>");
-$(".computer-container").after("<p>The House Picked</p>");
+var title_count = 0;
 
 // Results Sequence Script
 function createChosenButton (userOrComp, option, winCssStyling = false) {
@@ -45,6 +39,17 @@ function createChosenButton (userOrComp, option, winCssStyling = false) {
   } else { // if you're the loser, then you don't receive any additional styling
       $("." + userOrComp + "-container").append("<div id='" + option + "-button-result' class='btn-result'> <div class='circle-result'> <img class='icon-result' src='images/icon-" + option + ".svg' alt='" + option + "icon'> </div> </div>");
   }
+
+  // This function, createChosenButton, will be executed twice, one for the user and the other for the computer. We want to remove the 1440px Desktop styling and incorporate the mobile styling, where the "you-picked" text is below the chosen buttons as opposed to above. I created a variable to make sure the if-statement is only executed twice, one for each player and reset the variable count in the main game function.
+  if (x.matches && title_count <= 1) {
+    $("." + userOrComp + "-container p").remove();
+    if (userOrComp == "user") {
+      $("." + userOrComp + "-container").append("<p class='container-title'>You Picked</p>");
+    } else {
+      $(".computer-container").append("<p class='container-title'>The House Picked</p>");
+    }
+  }
+
 }
 
 function whoWon (uc, cc) {
@@ -133,6 +138,9 @@ $("#rock-button, #paper-button, #scissors-button").click(function(event) {
 
   // add .result-message-container (includes win/loss message and play again button) after user container
   showResultMessage(wonOrLostMessage);
+
+  // reset title-count
+  title_count = 0;
 
   // play again sequence
   playAgain();
