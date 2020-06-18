@@ -21,6 +21,4 @@ The challenge was to recreate the web page as presented in the design file provi
 
 ### Personal Screenshot - Mobile
 
-![Frontend Mentor Output Screenshot Mobile1](screenshots/mobile1.png)
-![Frontend Mentor Output Screenshot Mobile1](screenshots/mobile2.png)
-![Frontend Mentor Output Screenshot Mobile1](screenshots/mobile3.png)
+![Frontend Mentor Output Screenshot Mobile1](screenshots/mobile.png)
