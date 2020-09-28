@@ -1,5 +1,3 @@
-# ignore .DS_Store file
 .DS_Store
-
-# ignore design folder
 design/
+node_modules 
