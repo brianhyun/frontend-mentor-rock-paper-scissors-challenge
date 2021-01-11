@@ -1,766 +1,614 @@
 html {
-  box-sizing: border-box;
-  height: 100%;
+    box-sizing: border-box;
+    height: 100%;
 }
 
-*, *::before, *::after {
-  box-sizing: inherit;
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
 
 body {
-  align-items: center;
-  background: radial-gradient(circle at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
-  display: flex;
-  flex-direction: column;
-  font-family: 'Barlow Semi Condensed', sans-serif;
-  height: 100%;
-  margin: 0;
-  overflow: hidden; /* overflow hidden doesn't allow you to scroll -- locks the webpage as a single webpage! */
-  padding: 3%;
-  position: relative; /* to set position of rules popup container*/
+    align-items: center;
+    background: radial-gradient(
+        circle at top,
+        hsl(214, 47%, 23%),
+        hsl(237, 49%, 15%)
+    );
+    display: flex;
+    flex-direction: column;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 1.8rem;
+    position: relative; /* to set position of rules popup container*/
 }
 
 p {
-  margin: 0;
+    margin: 0;
 }
 
 /******************* Header Container *******************/
 
 .header-container {
-  align-items: center;
-  border: 2px solid hsl(217, 16%, 45%);
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5%;
-  padding: 1.5%;
-  width: 50%;
+    align-items: center;
+    border: 2px solid hsla(217, 16%, 45%, 0.699);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7rem;
+    padding: 1rem;
+    min-width: 50%;
 }
 
-.header-container .title-box p {
-  color: #fff;
-  font-size: 2.5rem;
-  line-height: 0.8;
-  text-transform: uppercase;
+/* Title Box */
+
+.title-box {
+    margin-right: 5rem;
+}
+
+.title-box p {
+    color: #ffffff;
+    font-size: 2.3rem;
+    line-height: 0.8;
+    text-transform: uppercase;
 }
 
 /* Score Box */
 
 .score-box {
-  align-items: center;
-  background-color: #fff;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: space-around;
-  padding: 2.5% 5%;
-  text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    text-align: center;
 }
 
 .score-title {
-  color: hsl(229, 64%, 46%);
-  letter-spacing: 3px;
-  line-height: 0.8;
-  padding-bottom: 15px;
-  text-transform: uppercase;
+    color: hsl(229, 64%, 46%);
+    letter-spacing: 3px;
+    line-height: 0.7;
+    padding-bottom: 15px;
+    text-transform: uppercase;
 }
 
 .score-number {
-  color: hsl(229, 25%, 31%);
-  font-size: 3.5rem;
-  font-weight: 700;
-  line-height: 0.8;
+    color: hsl(229, 25%, 31%);
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 0.8;
 }
 
 /******************* Game Container *******************/
 
 .game-container {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  min-width: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-width: 50%;
 }
 
 /* Choose Sequence Container */
 
 .choose-sequence-container {
-  margin-top: 10%;
-  position: relative;
+    position: relative;
+}
+
+.triangle {
+    display: block;
 }
 
 .btn {
-  align-items: center;
-  border-radius: 50%;
-  display: flex;
-  height: 210px;
-  justify-content: center;
-  width: 210px;
-  -moz-box-shadow:    0 3px 20px #000;
-  -webkit-box-shadow: 0 3px 20px #000;
-  box-shadow:         0 3px 20px #000;
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    height: 170px;
+    justify-content: center;
+    width: 170px;
+    -moz-box-shadow: 0 3px 20px #000;
+    -webkit-box-shadow: 0 3px 20px #000;
+    box-shadow: 0 3px 20px #000;
+}
+
+.btn:hover {
+    cursor: pointer;
 }
 
 .icon {
-  width: 75px;
+    width: 60px;
 }
 
 #paper-button {
-  background-image: linear-gradient(to bottom,hsl(230, 89%, 65%), hsl(230, 89%, 62%));
-  position: absolute;
-    top: -105px;
-    left: -105px;
-  -moz-box-shadow:    inset 0 -8px 0 #3A51D9;
-  -webkit-box-shadow: inset 0 -8px 0 #3A51D9;
-  box-shadow:         inset 0 -8px 0 #3A51D9;
-}
-
-#paper-button:hover {
-  cursor: pointer;
+    background-image: linear-gradient(
+        to bottom,
+        hsl(230, 89%, 65%),
+        hsl(230, 89%, 62%)
+    );
+    position: absolute;
+    top: -85px;
+    left: -85px;
+    -moz-box-shadow: inset 0 -8px 0 #3a51d9;
+    -webkit-box-shadow: inset 0 -8px 0 #3a51d9;
+    box-shadow: inset 0 -8px 0 #3a51d9;
 }
 
 #scissors-button {
-  background-image: linear-gradient(to bottom, hsl(40, 84%, 53%), hsl(39, 89%, 49%));
-  position: absolute;
-    top: -105px;
-    right: -105px;
-  -moz-box-shadow:    inset 0 -8px 0 #C87E0B;
-  -webkit-box-shadow: inset 0 -8px 0 #C87E0B;
-  box-shadow:         inset 0 -8px 0 #C87E0B;
-}
-
-#scissors-button:hover {
-  cursor: pointer;
+    background-image: linear-gradient(
+        to bottom,
+        hsl(40, 84%, 53%),
+        hsl(39, 89%, 49%)
+    );
+    position: absolute;
+    top: -85px;
+    right: -85px;
+    -moz-box-shadow: inset 0 -8px 0 #c87e0b;
+    -webkit-box-shadow: inset 0 -8px 0 #c87e0b;
+    box-shadow: inset 0 -8px 0 #c87e0b;
 }
 
 #rock-button {
-  background-image: linear-gradient(to bottom, hsl(349, 70%, 56%), hsl(349, 71%, 52%));
-  position: absolute;
-    bottom: -105px;
-    right: calc(50% - 105px);
-  -moz-box-shadow:    inset 0 -8px 0 #BF253E;
-  -webkit-box-shadow: inset 0 -8px 0 #BF253E;
-  box-shadow:         inset 0 -8px 0 #BF253E;
-}
-
-#rock-button:hover {
-  cursor: pointer;
+    background-image: linear-gradient(
+        to bottom,
+        hsl(349, 70%, 56%),
+        hsl(349, 71%, 52%)
+    );
+    position: absolute;
+    bottom: -70px;
+    right: calc(50% - 85px);
+    -moz-box-shadow: inset 0 -8px 0 #bf253e;
+    -webkit-box-shadow: inset 0 -8px 0 #bf253e;
+    box-shadow: inset 0 -8px 0 #bf253e;
 }
 
 .circle {
-  align-items: center;
-  background-color: #fff;
-  border-radius: 50%;
-  -moz-box-shadow:    inset 0 7px 0 #E6E6E6;
-  -webkit-box-shadow: inset 0 7px 0 #E6E6E6;
-  box-shadow:         inset 0 7px 0 #E6E6E6;
-  display: flex;
-  height: 160px;
-  justify-content: center;
-  width: 160px;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    -moz-box-shadow: inset 0 7px 0 #e6e6e6;
+    -webkit-box-shadow: inset 0 7px 0 #e6e6e6;
+    box-shadow: inset 0 7px 0 #e6e6e6;
+    display: flex;
+    height: 130px;
+    justify-content: center;
+    width: 130px;
 }
 
 /******************* Result Container *******************/
 
 .result-container {
-  display: none;
-  min-width: 100%;
+    display: none;
+    min-width: 100%;
 }
 
 .result-container p {
-  margin-bottom: 13%;
+    margin-bottom: 13%;
 }
 
-.user-container, .computer-container{
-  align-items: center;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  font-size: 1.5rem;
-  letter-spacing: 4px;
-  text-align: center;
-  text-transform: uppercase;
-  width: 100%;
+.user-container,
+.computer-container {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
 }
 
 /* Result Styles */
 
 #rock-button-result {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  background-image: linear-gradient(to bottom, hsl(349, 70%, 56%), hsl(349, 71%, 52%));
-  -moz-box-shadow:    inset 0 -8px 0 #BF253E;
-  -webkit-box-shadow: inset 0 -8px 0 #BF253E;
-  box-shadow:         inset 0 -8px 0 #BF253E;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(
+        to bottom,
+        hsl(349, 70%, 56%),
+        hsl(349, 71%, 52%)
+    );
+    -moz-box-shadow: inset 0 -8px 0 #bf253e;
+    -webkit-box-shadow: inset 0 -8px 0 #bf253e;
+    box-shadow: inset 0 -8px 0 #bf253e;
 }
 
 #paper-button-result {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  background-image: linear-gradient(to bottom,hsl(230, 89%, 65%), hsl(230, 89%, 62%));
-  -moz-box-shadow:    inset 0 -8px 0 #3A51D9;
-  -webkit-box-shadow: inset 0 -8px 0 #3A51D9;
-  box-shadow:         inset 0 -8px 0 #3A51D9;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(
+        to bottom,
+        hsl(230, 89%, 65%),
+        hsl(230, 89%, 62%)
+    );
+    -moz-box-shadow: inset 0 -8px 0 #3a51d9;
+    -webkit-box-shadow: inset 0 -8px 0 #3a51d9;
+    box-shadow: inset 0 -8px 0 #3a51d9;
 }
 
 #scissors-button-result {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  background-image: linear-gradient(to bottom, hsl(40, 84%, 53%), hsl(39, 89%, 49%));
-  -moz-box-shadow:    inset 0 -8px 0 #C87E0B;
-  -webkit-box-shadow: inset 0 -8px 0 #C87E0B;
-  box-shadow:         inset 0 -8px 0 #C87E0B;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(
+        to bottom,
+        hsl(40, 84%, 53%),
+        hsl(39, 89%, 49%)
+    );
+    -moz-box-shadow: inset 0 -8px 0 #c87e0b;
+    -webkit-box-shadow: inset 0 -8px 0 #c87e0b;
+    box-shadow: inset 0 -8px 0 #c87e0b;
 }
 
 /* Winner Ripple Circle Styling */
 
 .circle-styling-box {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  position: relative; /* to set position absolute for winner circle ripple styling */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative; /* to set position absolute for winner circle ripple styling */
 }
 
 .winner-circle-styling {
-  background-color: #fff;
-  border-radius: 50%;
-  opacity: 0.05;
-  position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0.05;
+    position: absolute;
 }
 
 .winner-circle-styling.large-circle {
-  height: 850px;
-  width: 850px;
-  z-index: 1;
+    height: 850px;
+    width: 850px;
+    z-index: 1;
 }
 
 .winner-circle-styling.medium-circle {
-  height: 650px;
-  width: 650px;
-  z-index: 2;
+    height: 650px;
+    width: 650px;
+    z-index: 2;
 }
 
 .winner-circle-styling.small-circle {
-  height: 450px;
-  width: 450px;
-  z-index: 3;
+    height: 450px;
+    width: 450px;
+    z-index: 3;
 }
 
 .btn-result {
-  align-items: center;
-  border-radius: 50%;
-  display: flex;
-  height: 300px;
-  justify-content: center;
-  width: 300px;
-  -moz-box-shadow:    0 3px 10px #000;
-  -webkit-box-shadow: 0 3px 10px #000;
-  box-shadow:         0 3px 10px #000;
-  z-index: 4;
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    height: 300px;
+    justify-content: center;
+    width: 300px;
+    -moz-box-shadow: 0 3px 10px #000;
+    -webkit-box-shadow: 0 3px 10px #000;
+    box-shadow: 0 3px 10px #000;
+    z-index: 4;
 }
 
 .circle-result {
-  align-items: center;
-  background-color: #fff;
-  border-radius: 50%;
-  -moz-box-shadow:    inset 0 7px 0 #E6E6E6;
-  -webkit-box-shadow: inset 0 7px 0 #E6E6E6;
-  box-shadow:         inset 0 7px 0 #E6E6E6;
-  display: flex;
-  height: 240px;
-  justify-content: center;
-  width: 240px;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    -moz-box-shadow: inset 0 7px 0 #e6e6e6;
+    -webkit-box-shadow: inset 0 7px 0 #e6e6e6;
+    box-shadow: inset 0 7px 0 #e6e6e6;
+    display: flex;
+    height: 240px;
+    justify-content: center;
+    width: 240px;
 }
 
 .icon-result {
-  width: 100px;
+    width: 100px;
 }
 
 /* Result Message */
 
 .result-message-container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-transform: uppercase;
-  width: 32rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-transform: uppercase;
+    width: 32rem;
 }
 
 .result-message {
-  color: #fff;
-  font-size: 3rem;
-  letter-spacing: 2px;
+    color: #fff;
+    font-size: 3rem;
+    letter-spacing: 2px;
 }
 
 .play-again-button {
-  align-items: center;
-  background-color: #fff;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  padding: 8%;
-  width: 100%;
-  z-index: 500; /* winner circle ripple styling overlaps play button and prevents clicking -- need index higher than larger circle */
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    padding: 8%;
+    width: 100%;
+    z-index: 500; /* winner circle ripple styling overlaps play button and prevents clicking -- need index higher than larger circle */
 }
 
 .play-again-button:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .play-again-button p {
-  color: hsl(349, 71%, 52%);
-  letter-spacing: 3px;
-  margin: 0;
+    color: hsl(349, 71%, 52%);
+    letter-spacing: 3px;
+    margin: 0;
 }
 
 /******************* Rules Button *******************/
 
 .rules-button {
-  border: 1px solid #fff;
-  border-radius: 10px;
-  color: #fff;
-  padding: 0.5% 2.5%;
-  position: absolute;
-    right: 30px;
-    bottom: 30px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    padding: 0.5rem 2rem 0.6rem;
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    transition: background-color 0.5s, color 0.5s;
 }
 
 .rules-button:hover {
-  cursor: pointer;
+    background-color: #ffffff;
+    color: hsl(237, 49%, 15%);
+    cursor: pointer;
 }
 
 .rules-button p {
-  letter-spacing: 3px;
-  text-transform: uppercase;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 /* Rules Popup Container */
 
 .rules-popup-container {
-  align-items: center;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  position: absolute;
+    background-color: #0000006b;
+    align-items: center;
+    display: none;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
     top: 0;
     left: 0;
-  width: 100%;
-  visibility: hidden;
-  z-index: 9998;
-}
-
-.black-background {
-  background-color: #000;
-  height: 100%;
-  opacity: 0.5;
-  width: 100%;
-  z-index: 9997;
+    width: 100%;
+    z-index: 9998;
 }
 
 .rules-card {
-  align-items: center;
-  background-color: #fff;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  height: 450px;
-  justify-content: center;
-  padding: 2%;
-  position: absolute;
-    left: 750px;
-    top: 250px;
-  width: 420px;
-  z-index: 9999;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    justify-content: center;
+    padding: 2rem;
+    width: 35%;
+    z-index: 9997;
 }
 
 .rules-header {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 12%;
-  width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12%;
+    width: 100%;
 }
 
 .rules-header p {
-  font-size: 1.5rem;
-  text-transform: uppercase;
+    font-size: 1.5rem;
+    text-transform: uppercase;
 }
 
-.rules-image, .rules-image img {
-  width: 100%;
+.rules-image,
+.rules-image img {
+    display: block;
+    width: 100%;
 }
 
 .rules-close:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 /***********************************************************************/
 /***********************************************************************/
-/******************* Media Query (MQ Mobile Section)********************/
+/******************* Media Query (Tablet Section) **********************/
+/***********************************************************************/
+/***********************************************************************/
+
+@media only screen and (min-width: 376px) and (max-width: 800px) {
+}
+
+/***********************************************************************/
+/***********************************************************************/
+/******************* Media Query (MQ Mobile Section) *******************/
 /***********************************************************************/
 /***********************************************************************/
 
 @media only screen and (max-width: 375px) {
-
-  body {
-    padding: 7%;
-  }
-
-  /* Header Container */
-
-  .header-container {
-    border-width: 3px;
-    padding: 5%;
-    width: 100%;
-  }
-
-  .header-container .title-box p {
-    font-size: 1.2rem;
-  }
-
-  /* Score Box */
-
-  .score-box {
-    padding: 4% 10%;
-  }
-
-  .score-title {
-    font-size: 0.6rem;
-    letter-spacing: 2px;
-    padding-bottom: 10px;
-  }
-
-  .score-number {
-    font-size: 2.2rem;
-  }
-
-  /* Choose Sequence Container */
-
-  .choose-sequence-container {
-    margin-top: 37%;
-  }
-
-  .triangle {
-    width: 180px;
-  }
-
-  .btn {
-    height: 140px;
-    width: 140px;
-  }
-
-  .icon {
-    width: 50px;
-  }
-
-  .circle {
-    height: 110px;
-    width: 110px;
-  }
-
-  #paper-button {
-    position: absolute;
-      top: -70px;
-      left: -70px;
-  }
-
-  #scissors-button {
-    position: absolute;
-      top: -70px;
-      right: -70px;
-  }
-
-  #rock-button {
-    position: absolute;
-      bottom: -70px;
-      right: calc(50% - 70px);
-  }
-
-  /* Rules Button */
-
-  .rules-button {
-    padding: 3% 12%;
-    position: absolute;
-      right: calc(50% - 74.40px);
-      bottom: 30px;
-  }
-
-  .rules-button p {
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-  }
-
-  /* Rules Popup Container */
-
-  .black-background {
-    display: none;
-  }
-
-  .rules-card {
-    border-radius: 0;
-    height: 100%;
-    padding: 5%;
-    position: absolute;
-      left: 0;
-      top: 0;
-    width: 100%;
-  }
-
-  .rules-header {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20%;
-    width: 100%;
-  }
-
-  .rules-close {
-    display: none;
-  }
-
-  .rules-image {
-    padding-top: 15%;
-    width: 90%;
-  }
-
-  .rules-image img {
-    width: 100%;
-  }
-
-  .rules-card::after {
-    margin-top: 40%;
-    content: url("../images/icon-close.svg");
-  }
-
-  /* Game Container */
-
-  .game-container {
-    min-width: 100%;
-  }
-
-  /* Result Container */
-
-  .result-container {
-    margin-top: 10%;
-    width: 100%;
-  }
-
-  .result-container p {
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    margin-bottom: 0;
-  }
-
-  .container-title {
-    margin-top: 15%;
-  }
-
-  .btn-result {
-    height: 135px;
-    width: 135px;
-  }
-
-  .circle-result {
-    height: 100px;
-    width: 100px;
-  }
-
-  .icon-result {
-    width: 45px;
-  }
-
-  /* Winner Styling */
-  .winner-circle-styling.large-circle {
-    height: 280px;
-    width: 280px;
-    z-index: 1;
-  }
-
-  .winner-circle-styling.medium-circle {
-    height: 230px;
-    width: 230px;
-    z-index: 2;
-  }
-
-  .winner-circle-styling.small-circle {
-    height: 180px;
-    width: 180px;
-    z-index: 3;
-  }
-
-  /* Result Message */
-
-  .result-message-container {
-    margin-top: 11%;
-    width: 11rem;
-  }
-
-  .result-message {
-    font-size: 2.6rem;
-    padding-bottom: 7%;
-  }
-
-  .play-again-button {
-    padding: 6% 7%;
-    width: 100%;
-  }
-
-  .play-again-button p {
-    font-size: 0.8rem;
-  }
-}
-
-/***********************************************************************/
-/***********************************************************************/
-/******************* Media Query (MQ Desktop Section)*******************/
-/***********************************************************************/
-/***********************************************************************/
-
-@media only screen and (max-width: 1440px) and (min-width: 376px){
-
-  /* MQ: Header Container */
-
-  .header-container {
-    margin-bottom: 5%;
-    padding: 1.5%;
-  }
-
-  .header-container .title-box p {
-    font-size: 2rem;
-  }
-
-  /* MQ: Score Box */
-
-  .score-box {
-    padding: 3% 6%;
-  }
-
-  .score-title {
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-  }
-
-  .score-number {
-    font-size: 2.5rem;
-  }
-
-  /* MQ: Rules Popup Container */
-
-  .rules-card {
-    padding: 2.5%;
-    position: absolute;
-      left: 510px;
-      top: 150px;
-  }
-
-  .rules-header {
-    margin-bottom: 13%;
-  }
-
-  /* MQ: Choose Sequence Container */
-
-  .choose-sequence-container {
-    margin-top: 10%;
-  }
-
-  .triangle {
-    width: 270px;
-  }
-
-  .btn {
-    height: 190px;
-    width: 190px;
-  }
-
-  .icon {
-    width: 65px;
-  }
-
-  #paper-button {
-    position: absolute;
-      top: -95px;
-      left: -95px;
-  }
-
-  #scissors-button {
-    position: absolute;
-      top: -95px;
-      right: -95px;
-  }
-
-  #rock-button {
-    position: absolute;
-      bottom: -95px;
-      right: calc(50% - 95px);
-  }
-
-  .circle {
-    height: 140px;
-    width: 140px;
-  }
-
-  /* Result Container */
-
-  .user-container, .computer-container{
-    font-size: 1.3em;
-  }
-
-  /* Winner Ripple Circle Styling */
-
-  .winner-circle-styling.large-circle {
-    height: 720px;
-    width: 720px;
-  }
-
-  .winner-circle-styling.medium-circle {
-    height: 570px;
-    width: 570px;
-  }
-
-  .winner-circle-styling.small-circle {
-    height: 420px;
-    width: 420px;
-  }
-
-  .btn-result {
-    height: 280px;
-    width: 280px;
-  }
-
-  .circle-result {
-    height: 220px;
-    width: 220px;
-  }
-
-  .icon-result {
-    width: 95px;
-  }
-
-  /* Result Message */
-
-  .result-message-container {
-    width: 30rem;
-  }
-
-  .result-message {
-    font-size: 2.85rem;
-  }
-
-  .play-again-button {
-    padding: 7%;
-  }
-
-  .play-again-button p {
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-  }
-
+    body {
+        padding: 7%;
+    }
+
+    /* Header Container */
+
+    .header-container {
+        border-width: 3px;
+        padding: 5%;
+        width: 100%;
+    }
+
+    .header-container .title-box p {
+        font-size: 1.2rem;
+    }
+
+    /* Score Box */
+
+    .score-box {
+        padding: 4% 10%;
+    }
+
+    .score-title {
+        font-size: 0.6rem;
+        letter-spacing: 2px;
+        padding-bottom: 10px;
+    }
+
+    .score-number {
+        font-size: 2.2rem;
+    }
+
+    /* Choose Sequence Container */
+
+    .choose-sequence-container {
+        margin-top: 37%;
+    }
+
+    .triangle {
+        width: 180px;
+    }
+
+    .btn {
+        height: 140px;
+        width: 140px;
+    }
+
+    .icon {
+        width: 50px;
+    }
+
+    .circle {
+        height: 110px;
+        width: 110px;
+    }
+
+    #paper-button {
+        position: absolute;
+        top: -70px;
+        left: -70px;
+    }
+
+    #scissors-button {
+        position: absolute;
+        top: -70px;
+        right: -70px;
+    }
+
+    #rock-button {
+        position: absolute;
+        bottom: -70px;
+        right: calc(50% - 70px);
+    }
+
+    /* Rules Button */
+
+    .rules-button {
+        padding: 3% 12%;
+        position: absolute;
+        right: calc(50% - 74.4px);
+        bottom: 30px;
+    }
+
+    .rules-button p {
+        font-size: 0.8rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+
+    /* Rules Popup Container */
+    .rules-card {
+        height: 55%;
+        justify-content: space-between;
+        padding: 10%;
+        width: 80%;
+    }
+
+    /* Game Container */
+
+    .game-container {
+        min-width: 100%;
+    }
+
+    /* Result Container */
+
+    .result-container {
+        margin-top: 10%;
+        width: 100%;
+    }
+
+    .result-container p {
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        margin-bottom: 0;
+    }
+
+    .container-title {
+        margin-top: 15%;
+    }
+
+    .btn-result {
+        height: 135px;
+        width: 135px;
+    }
+
+    .circle-result {
+        height: 100px;
+        width: 100px;
+    }
+
+    .icon-result {
+        width: 45px;
+    }
+
+    /* Winner Styling */
+    .winner-circle-styling.large-circle {
+        height: 280px;
+        width: 280px;
+        z-index: 1;
+    }
+
+    .winner-circle-styling.medium-circle {
+        height: 230px;
+        width: 230px;
+        z-index: 2;
+    }
+
+    .winner-circle-styling.small-circle {
+        height: 180px;
+        width: 180px;
+        z-index: 3;
+    }
+
+    /* Result Message */
+
+    .result-message-container {
+        margin-top: 11%;
+        width: 11rem;
+    }
+
+    .result-message {
+        font-size: 2.6rem;
+        padding-bottom: 7%;
+    }
+
+    .play-again-button {
+        padding: 6% 7%;
+        width: 100%;
+    }
+
+    .play-again-button p {
+        font-size: 0.8rem;
+    }
 }
 
 /* Scratch Section: comment out this section to return to original game sequence */
@@ -772,5 +620,3 @@ p {
 .result-container {
   display: flex;
 } */
-
-/* After four weeks of respite, I'm back in business, girls and boys! Brian, I'm genuinely glad you came back for me. I was your work-in-progress and I thought you'd leave me. I'm glad you came back, again. Just take your time, my friend! */
