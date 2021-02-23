@@ -15,7 +15,7 @@ function createChosenButton(userOrComp, option, winStyles) {
         $('.' + userOrComp + '-container').append(
             "<div class='circle-styling-box'> <div id='" +
                 option +
-                "-button-result' class='btn-result'> <div class='circle-result'> <img class='icon-result' src='images/icon-" +
+                "-button-result' class='btn-result'> <div class='circle-result'> <img class='icon-result' src='.images/icon-" +
                 option +
                 ".svg' alt='" +
                 option +
@@ -26,7 +26,7 @@ function createChosenButton(userOrComp, option, winStyles) {
         $('.' + userOrComp + '-container').append(
             "<div id='" +
                 option +
-                "-button-result' class='btn-result'> <div class='circle-result'> <img class='icon-result' src='images/icon-" +
+                "-button-result' class='btn-result'> <div class='circle-result'> <img class='icon-result' src='.images/icon-" +
                 option +
                 ".svg' alt='" +
                 option +
