@@ -375,15 +375,13 @@ header {
 }
 
 .rules-card {
-    align-items: center;
     background-color: #ffffff;
     border-radius: 10px;
     display: flex;
-    flex-direction: column;
-    height: 70%;
+    align-items: center;
     justify-content: center;
+    flex-direction: column;
     padding: 2rem;
-    width: 35%;
     z-index: 9997;
 }
 
@@ -398,12 +396,6 @@ header {
 .rules-header p {
     font-size: 1.5rem;
     text-transform: uppercase;
-}
-
-.rules-image,
-.rules-image img {
-    display: block;
-    width: 100%;
 }
 
 .rules-close:hover {
