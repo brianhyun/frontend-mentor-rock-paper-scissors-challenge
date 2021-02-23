@@ -48,20 +48,21 @@ header {
     min-width: 50%;
 }
 
-.header__logo {
-    margin-right: 5rem;
-}
-
 .header__score-box {
     background-color: #ffffff;
     border-radius: 10px;
-    padding: 1rem 1.5rem;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 0 1.5rem;
 }
 
 .header__score-title {
     color: hsl(229, 64%, 46%);
     letter-spacing: 3px;
+    margin-right: -3px;
     line-height: 0.7;
     padding-bottom: 15px;
     text-transform: uppercase;
@@ -169,8 +170,7 @@ header {
  */
 
 .result-container {
-    display: none;
-    width: 100%;
+    display: none; /* hide results until the calculation has been performed */
 }
 
 .result-container p {
@@ -421,9 +421,12 @@ header {
 
     /* Header */
     header {
-        border-width: 3px;
         padding: 5%;
         width: 100%;
+    }
+
+    .header__logo {
+        width: 7rem;
     }
 
     .header__score-box {
@@ -441,10 +444,6 @@ header {
     }
 
     /* Choose Sequence Container */
-    .choose-sequence-container {
-        margin-top: 37%;
-    }
-
     .triangle {
         width: 180px;
     }

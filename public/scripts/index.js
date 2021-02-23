@@ -9,14 +9,6 @@ $('.rules-close').click(function () {
     $('.rules-popup-container').hide();
 });
 
-// To hide rules modal--for mobile version
-$('.rules-card:last-child').click(function () {
-    $('.rules-popup-container').hide();
-});
-
-let x = window.matchMedia('(max-width: 375px)');
-let title_count = 0;
-
 // Results Sequence Script
 function createChosenButton(userOrComp, option, winCssStyling = false) {
     // This function will append a div to the .user-container or .computer-container, whether it's for the user or computer depends on the argument passed into the function, that shows what choice that was selected ("rock", "paper", or "scissors").
@@ -42,22 +34,6 @@ function createChosenButton(userOrComp, option, winCssStyling = false) {
                 option +
                 "icon'> </div> </div>"
         );
-    }
-
-    // This function, createChosenButton, will be executed twice, one for the user and the other for the computer.
-    // We want to remove the 1440px Desktop styling and incorporate the mobile styling, where the "you-picked" text is below the chosen buttons as opposed to above.
-    // I created a variable to make sure the if-statement is only executed twice, one for each player and reset the variable count in the main game function.
-    if (x.matches && title_count <= 1) {
-        $('.' + userOrComp + '-container p').remove();
-        if (userOrComp == 'user') {
-            $('.' + userOrComp + '-container').append(
-                "<p class='container-title'>You Picked</p>"
-            );
-        } else {
-            $('.computer-container').append(
-                "<p class='container-title'>The House Picked</p>"
-            );
-        }
     }
 }
 
