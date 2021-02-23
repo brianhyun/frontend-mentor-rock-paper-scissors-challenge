@@ -4,13 +4,13 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>Frontend Mentor | Rock, Paper, Scissors</title>
+        <title>Mini Games | Rock, Paper, Scissors</title>
 
         <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="./images/favicon-32x32.png"
+            href="./images/favicon.png"
         />
 
         <link
@@ -23,24 +23,22 @@
 
     <body>
         <!-- Header Container -->
-        <div class="header-container">
-            <!-- Title Box -->
-            <div class="title-box">
-                <p>Rock<br />Paper<br />Scissors</p>
-            </div>
+        <header>
+            <!-- Logo -->
+            <img class="header__logo" src="/images/logo.svg" alt="" />
 
             <!-- Score Box -->
-            <div class="score-box">
-                <p class="score-title">Score</p>
-                <p class="score-number">0</p>
+            <div class="header__score-box">
+                <p class="header__score-title">Score</p>
+                <p class="header__score-number">0</p>
             </div>
-        </div>
+        </header>
 
         <!-- Game Container -->
         <div class="game-container">
             <!-- Choose Sequence Container -->
             <div class="choose-sequence-container">
-                <!-- Translucent Triangle -->
+                <!-- Triangle -->
                 <img
                     class="triangle"
                     src="images/bg-triangle.svg"
@@ -79,51 +77,21 @@
                         />
                     </div>
                 </div>
-                <!-- rock button -->
             </div>
-            <!-- choose sequence container -->
 
             <!-- Result Container -->
             <div class="result-container">
                 <!-- User Container  -->
                 <div class="user-container">
                     <p>You Picked</p>
-                    <!-- append user's choice: example div below with winner ripple circle styling; comment out to return to normal game sequence -->
-                    <!-- <div class="circle-styling-box">
-						<div id="rock-button-result" class="btn-result">
-						<div class="circle-result">
-							<img class="icon-result" src="images/icon-rock.svg" alt="rock icon">
-						</div>
-						</div>
-						<div class="winner-circle-styling small-circle"></div>
-						<div class="winner-circle-styling medium-circle"></div>
-						<div class="winner-circle-styling large-circle"></div>
-					</div> -->
                 </div>
 
-                <!-- Result Message Container -->
-                <!-- <div class="result-message-container">
-				<p class="result-message">You Lose</p>
-				<div class="play-again-button">
-					<p>Play Again</p>
-				</div>
-				</div> -->
-
-                <!-- Result Container Right -->
+                <!-- Computer Container -->
                 <div class="computer-container">
                     <p>The House Picked</p>
-                    <!-- append computer's choice: example div below; comment out to return to normal game sequence -->
-                    <!-- <div id="paper-button-result" class="btn-result">
-						<div class="circle-result">
-						<img class="icon-result" src="images/icon-paper.svg" alt="paper icon">
-						</div>
-					</div> -->
                 </div>
-                <!-- computer container -->
             </div>
-            <!-- result container -->
         </div>
-        <!-- game container -->
 
         <!-- Rules Button -->
         <div class="rules-button">
