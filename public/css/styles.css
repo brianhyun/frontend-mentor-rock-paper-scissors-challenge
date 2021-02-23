@@ -309,8 +309,9 @@ header {
 
 .result-message {
     color: #fff;
-    font-size: 3rem;
+    font-size: 3.5rem;
     letter-spacing: 2px;
+    white-space: nowrap;
 }
 
 .play-again-button {
@@ -389,7 +390,7 @@ header {
     align-items: center;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 12%;
+    margin-bottom: 2.5rem;
     width: 100%;
 }
 
