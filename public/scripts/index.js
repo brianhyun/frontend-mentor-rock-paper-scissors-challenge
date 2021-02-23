@@ -1,18 +1,16 @@
 // Rules Scripts
-// To show rules modal--for desktop and mobile version
 $('.rules-button').click(function () {
     $('.rules-popup-container').css('display', 'flex');
 });
 
-// To hide rules modal--for desktop version
 $('.rules-close').click(function () {
     $('.rules-popup-container').hide();
 });
 
 // Results Sequence Script
-function createChosenButton(userOrComp, option, winCssStyling = false) {
+function createChosenButton(userOrComp, option, winStyles) {
     // This function will append a div to the .user-container or .computer-container, whether it's for the user or computer depends on the argument passed into the function, that shows what choice that was selected ("rock", "paper", or "scissors").
-    if (winCssStyling == true) {
+    if (winStyles == true) {
         // If you're the winner, then you will receive additional styling.
         $('.' + userOrComp + '-container').append(
             "<div class='circle-styling-box'> <div id='" +
@@ -37,29 +35,43 @@ function createChosenButton(userOrComp, option, winCssStyling = false) {
     }
 }
 
-function whoWon(usersChoice, computersChoice) {
-    /* 
-		Return the winner of the game. 
-		Input: 0 = paper, 1 = scissors, 2 = rock
-		Output: 0 = draw, -1 = computer won, 1 = user won 
-	*/
-    if (usersChoice == computersChoice) {
-        return 0;
-    } else if (
-        (usersChoice == 2 && computersChoice == 0) ||
-        (usersChoice == 0 && computersChoice == 1) ||
-        (usersChoice == 1 && computersChoice == 2)
-    ) {
-        return -1;
-    } else {
-        return 1;
+/**
+ * @desc convert each player's choice to text
+ * @param usersChoice
+ * @param computersChoice
+ * @return text of user's choice, i.e. "rock", "paper", "scissors"
+ */
+function choiceToText(choice) {
+    if (choice === 0) {
+        return 'paper';
+    } else if (choice === 1) {
+        return 'scissors';
+    } else if (choice === 2) {
+        return 'rock';
     }
 }
 
+/**
+ * @desc calls createChosenButton which creates the button displaying the player's choice
+ * @param winner integer value representing winner of the round
+ * @param usersChoice integer value of user's choice
+ * @param computersChoice integer value of computer's choice
+ * @return none
+ */
+function showChosenButtons(winner, usersChoice, computersChoice) {
+    createChosenButton('user', choiceToText(usersChoice), userWin);
+    createChosenButton('computer', choiceToText(computersChoice), compWin);
+}
+
+/**
+ * @desc adds an event handler on the play again button refreshing the game
+ * @param none
+ * @return none
+ */
 function playAgain() {
-    $('.play-again-button').click(function () {
-        // remove .result-message-container
-        $('.result-message-container').remove();
+    $('.play-again-button').click(() => {
+        // dump contents of .result-message
+        $('.result-message').empty();
 
         // remove circle-result-divs from user & comp containers so new ones can be created in the next round
         $('.result-container .btn-result').remove();
@@ -68,44 +80,22 @@ function playAgain() {
         $('.circle-styling-box').remove();
 
         // hide .result-container
-        $('.result-container').css('display', 'none');
+        $('.result-container').hide();
 
         // show .choose-sequence-container
         $('.choose-sequence-container').css('display', 'flex');
+
+        // reset userWin and compWin
+        (userWin = 0), (compWin = 0);
     });
 }
 
-function showChosenButtons(winner, usersChoice, computersChoice) {
-    /* 
-		Display the buttons chosen by each player. 
-		Input: 
-			winner = 1, user won
-			winner = -1, computer won 
-			winner = 0, draw
-	*/
-    if (winner == 1) {
-        // append user circle-div in user container
-        createChosenButton('user', usersChoice, true);
-        // append computer circle-div in computer container
-        createChosenButton('computer', computersChoice);
-    } else if (winner == -1) {
-        createChosenButton('user', usersChoice);
-        createChosenButton('computer', computersChoice, true);
-    } else {
-        createChosenButton('user', usersChoice);
-        createChosenButton('computer', computersChoice);
-    }
-}
-
+/**
+ * @desc appends the appropriate result message in the proper location
+ * @param int the winner as a numerical value
+ * @return int - return 0 for draw, -1 for computer win, 1 for user win
+ */
 function showResultMessage(winner) {
-    /* 
-		Append the result message at the proper location. 
-
-		If the screen size is 375px or less, then:
-			(1) attach the results message and play again button after the game-container and 
-			(2) remove paragraph items (you picked and the house picked) from the top and move them to the bottom.
-		Otherwise, attach after the user-container.
-	*/
     let message = '';
 
     if (winner === 0) {
@@ -116,30 +106,49 @@ function showResultMessage(winner) {
         message = 'You Win!';
     }
 
-    const result_message = `<div class='result-message-container'> <p class='result-message'>${message}</p> <div class='play-again-button'> <p>Play Again</p> </div> </div>`;
-    $('.user-container').after(result_message);
+    $('.result-message').text(message);
 }
 
-function adjustScore(winner) {
-    /*
-		Adjust the score based off the winner. 
+/**
+ * @desc determines the winner of the round and sets userWinOrLose and compWinOrLose for later styling (1 for win, 0 for lose)
+ * @param int usersChoice - the user's choice
+ * @param int computersChoice - the computer's choice
+ * @return int - return 0 for draw, -1 for computer win, 1 for user win
+ */
+function whoWon(usersChoice, computersChoice) {
+    if (usersChoice == computersChoice) {
+        return 0;
+    } else if (
+        (usersChoice == 2 && computersChoice == 0) ||
+        (usersChoice == 0 && computersChoice == 1) ||
+        (usersChoice == 1 && computersChoice == 2)
+    ) {
+        compWin = 1;
+        return -1;
+    } else {
+        userWin = 1;
+        return 1;
+    }
+}
 
-		Input:
-			winner = 0, draw 
-			winner = 1, user won  
-			winner = -1, computer won 
-	*/
+/**
+ * @desc adjusts the score text based off of the winner
+ * @param int result from whoWon() function
+ * @return void - changes text in score number element tag
+ */
+function adjustScore(winner) {
     score += winner;
-    $('.score-number').text(score.toString());
+    $('.header__score-number').text(score.toString());
 }
 
 // Game Logic
-let score = 0;
+let score = 0,
+    userWin = 0,
+    compWin = 0;
 
-$('.btn').click(function (event) {
-    // Hide choose sequence container.
-    $('.choose-sequence-container').css('display', 'none');
-    // Display results container.
+$('.btn').click((event) => {
+    // Display Results Container
+    $('.choose-sequence-container').hide();
     $('.result-container').css('display', 'flex');
 
     // Determine Winner
@@ -156,9 +165,5 @@ $('.btn').click(function (event) {
     // add .result-message-container (includes win/loss message and play again button) after user container
     showResultMessage(winner);
 
-    // reset title-count
-    title_count = 0;
-
-    // play again sequence
     playAgain();
 });
