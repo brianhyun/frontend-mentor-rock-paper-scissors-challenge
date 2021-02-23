@@ -70,7 +70,6 @@ function showChosenButtons(winner, usersChoice, computersChoice) {
  */
 function playAgain() {
     $('.play-again-button').click(() => {
-        // dump contents of .result-message
         $('.result-message').empty();
 
         // remove circle-result-divs from user & comp containers so new ones can be created in the next round
@@ -79,10 +78,7 @@ function playAgain() {
         // remove .circle-styling-box for winners
         $('.circle-styling-box').remove();
 
-        // hide .result-container
         $('.result-container').hide();
-
-        // show .choose-sequence-container
         $('.choose-sequence-container').css('display', 'flex');
 
         // reset userWin and compWin
